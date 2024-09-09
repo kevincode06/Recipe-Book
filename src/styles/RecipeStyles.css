@@ -67,6 +67,19 @@
 }
 
 
-.detail-tittle {
-    align-items: center;
-}
+
+.app-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    background-color: #f5f5f5; 
+  }
+  
+  .recipe-list,
+  .recipe-detail {
+    width: 80%; 
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  

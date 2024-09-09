@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RecipeList from './components/RecipeList';
+import RecipeDetail from './components/RecipeDetail';
+import avocadoToast from './images/avocado-toast.jpeg'; 
+import pancakes from './images/pancakes.jpeg';          
+import grilledCheese from './images/grilled-cheese.jpeg'; 
 
-function App() {
+const App = () => {
+  const [recipes] = useState([
+    {
+      id: 1,
+      title: 'Avocado Toast',
+      description: 'A quick, healthy snack.',
+      ingredients: ['Avocado', 'Bread', 'Salt', 'Pepper', 'Lemon Juice'],
+      steps: ['Toast the bread.', 'Mash avocado and spread on toast.', 'Season with salt, pepper, and lemon juice.'],
+      image: avocadoToast, // Reference the correct import
+    },
+    {
+      id: 2,
+      title: 'Pancakes',
+      description: 'Fluffy breakfast pancakes.',
+      ingredients: ['Flour', 'Eggs', 'Milk', 'Butter', 'Syrup'],
+      steps: ['Mix all ingredients.', 'Pour onto a hot griddle.', 'Flip when bubbles appear.', 'Serve with syrup.'],
+      image: pancakes, // Reference the correct import
+    },
+    {
+      id: 3,
+      title: 'Grilled Cheese Sandwich',
+      description: 'A simple, cheesy delight.',
+      ingredients: ['Bread', 'Cheese', 'Butter'],
+      steps: ['Butter the bread.', 'Place cheese between slices.', 'Grill in a pan until golden brown.'],
+      image: grilledCheese, // Reference the correct import
+    }
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<RecipeList recipes={recipes} />} />
+        <Route path="/recipe/:id" element={<RecipeDetail recipes={recipes} />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

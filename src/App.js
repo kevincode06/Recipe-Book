@@ -5,6 +5,7 @@ import RecipeDetail from './components/RecipeDetail';
 import avocadoToast from './images/avocado-toast.jpeg'; 
 import pancakes from './images/pancakes.jpeg';          
 import grilledCheese from './images/grilled-cheese.jpeg'; 
+import './App.css'; // Import your CSS file
 
 const App = () => {
   const [recipes] = useState([
@@ -14,7 +15,7 @@ const App = () => {
       description: 'A quick, healthy snack.',
       ingredients: ['Avocado', 'Bread', 'Salt', 'Pepper', 'Lemon Juice'],
       steps: ['Toast the bread.', 'Mash avocado and spread on toast.', 'Season with salt, pepper, and lemon juice.'],
-      image: avocadoToast, // Reference the correct import
+      image: avocadoToast,
     },
     {
       id: 2,
@@ -22,7 +23,7 @@ const App = () => {
       description: 'Fluffy breakfast pancakes.',
       ingredients: ['Flour', 'Eggs', 'Milk', 'Butter', 'Syrup'],
       steps: ['Mix all ingredients.', 'Pour onto a hot griddle.', 'Flip when bubbles appear.', 'Serve with syrup.'],
-      image: pancakes, // Reference the correct import
+      image: pancakes,
     },
     {
       id: 3,
@@ -30,17 +31,19 @@ const App = () => {
       description: 'A simple, cheesy delight.',
       ingredients: ['Bread', 'Cheese', 'Butter'],
       steps: ['Butter the bread.', 'Place cheese between slices.', 'Grill in a pan until golden brown.'],
-      image: grilledCheese, // Reference the correct import
+      image: grilledCheese,
     }
   ]);
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<RecipeList recipes={recipes} />} />
-        <Route path="/recipe/:id" element={<RecipeDetail recipes={recipes} />} />
-      </Routes>
-    </Router>
+    <div className="app-container">
+      <Router>
+        <Routes>
+          <Route path="/" element={<RecipeList recipes={recipes} />} />
+          <Route path="/recipe/:id" element={<RecipeDetail recipes={recipes} />} />
+        </Routes>
+      </Router>
+    </div>
   );
 };
 

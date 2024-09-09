@@ -5,7 +5,8 @@ import RecipeDetail from './components/RecipeDetail';
 import avocadoToast from './images/avocado-toast.jpeg'; 
 import pancakes from './images/pancakes.jpeg';          
 import grilledCheese from './images/grilled-cheese.jpeg'; 
-import './App.css'; // Import your CSS file
+import '../styles/RecipeStyles.css';
+
 
 const App = () => {
   const [recipes] = useState([

@@ -7,7 +7,7 @@ import '../styles/RecipeStyles.css';
 const RecipeList = ({ recipes }) => {
   return (
     <div className="recipe-list">
-      <h1>Recipe List</h1> 
+      <h1>Recipe Book</h1> 
       <div className="recipe-cards">  
         {recipes.map((recipe) => (
           <div key={recipe.id} className="recipe-card">

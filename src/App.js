@@ -5,11 +5,13 @@ import RecipeDetail from './components/RecipeDetail';
 import avocadoToast from './images/avocado-toast.jpeg'; 
 import pancakes from './images/pancakes.jpeg';          
 import grilledCheese from './images/grilled-cheese.jpeg'; 
-import '../styles/RecipeStyles.css';
+import './styles/RecipeStyles.css';
+
 
 
 const App = () => {
   const [recipes] = useState([
+    // Recipe data...
     {
       id: 1,
       title: 'Avocado Toast',
@@ -47,5 +49,6 @@ const App = () => {
     </div>
   );
 };
+
 
 export default App;

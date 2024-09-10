@@ -9,7 +9,7 @@ const RecipeDetail = ({ recipes }) => {
   const recipe = recipes.find((recipe) => recipe.id === parseInt(id));
 
   if (!recipe) {
-    return <div>Recipe not found!</div>;
+    return <div>Pap & Wors</div>;
   }
 
   return (

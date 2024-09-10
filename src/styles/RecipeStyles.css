@@ -2,7 +2,7 @@
 ul, ol {
     list-style-position: outside;  
     padding-left: 20px;            
-    margin: 0;                    
+    margin: 20;                    
 }
 
 ul li, ol li {

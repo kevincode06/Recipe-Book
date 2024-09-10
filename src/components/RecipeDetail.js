@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import '../styles/RecipeStyles.css'; // Corrected path
+import '../styles/RecipeStyles.css';
+
+
 
 const RecipeDetail = ({ recipes }) => {
   const { id } = useParams();
